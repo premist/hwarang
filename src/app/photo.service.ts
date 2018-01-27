@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rsjx/Observable';
+import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+
+import { AngularFirestore } from 'angularfire2/firestore';
 
 import { Photo } from './photo';
 
 @Injectable()
 export class PhotoService {
+  photos: Observable<Photo[]>;
 
-  constructor() { }
+  constructor(private db: AngularFirestore) { }
 
   getPhotos(): Observable<Photo[]> {
-    return of([
-      { id: 'rtQTLUR2L3Qo7Jc6vQpN', created_at: 1516523052, title: 'Namsan', url_original: 'https://storage.googleapis.com/hwarangapp.appspot.com/2018/1/21/f7ae94' }
-    ]);
+    return this.db.collection<Photo>('photos', ref => ref.orderBy('created_at', 'desc')).valueChanges();
   }
 }
