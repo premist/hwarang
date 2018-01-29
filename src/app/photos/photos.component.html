@@ -1,7 +1,9 @@
 <h2>photos</h2>
 <ul class="photos">
-  <li *ngFor="let photo of photos" id="{{ photo.id  }}">
-    <img src="{{ photo.url_original }}">
+  <li *ngFor="let photo of photos"
+    id="{{ photo.id }}">
+    <img class="thumb" src="{{ photo.url_original }}">
     <p>{{ photo.title }}</p>
+    <a [routerLink]="[ { outlets: { photo: 'photos/' + photo.id } } ]" >Go</a>
   </li>
 </ul>

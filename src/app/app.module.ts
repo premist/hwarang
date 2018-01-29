@@ -8,18 +8,22 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { AppComponent } from './app.component';
 import { PhotosComponent } from './photos/photos.component';
+import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 
 import { PhotoService } from './photo.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhotosComponent
+    PhotosComponent,
+    PhotoDetailComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AppRoutingModule
   ],
   providers: [PhotoService],
   bootstrap: [AppComponent]
