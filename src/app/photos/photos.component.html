@@ -4,6 +4,6 @@
     id="{{ photo.id }}">
     <img class="thumb" src="{{ photo.url_original }}">
     <p>{{ photo.title }}</p>
-    <a [routerLink]="[ { outlets: { photo: 'photos/' + photo.id } } ]" >Go</a>
+    <a routerLink="/photos/{{ photo.id }}">Go</a>
   </li>
 </ul>

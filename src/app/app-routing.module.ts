@@ -5,7 +5,7 @@ import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 
 const routes: Routes = [
   { path: '', component: PhotosComponent },
-  { path: 'photos/:id', component: PhotoDetailComponent, outlet: 'photo' }
+  { path: 'photos/:id', component: PhotoDetailComponent }
 ];
 
 @NgModule({

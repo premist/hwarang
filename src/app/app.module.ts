@@ -11,7 +11,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 
 import { PhotoService } from './photo.service';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
