@@ -8,7 +8,7 @@ import { Photo } from '../photo';
 @Component({
   selector: 'app-photo-detail',
   templateUrl: './photo-detail.component.html',
-  styleUrls: ['./photo-detail.component.css']
+  styleUrls: ['./photo-detail.component.less']
 })
 export class PhotoDetailComponent implements OnInit {
   @Input() photo: Photo;
