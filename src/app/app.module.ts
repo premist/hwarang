@@ -12,12 +12,16 @@ import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 
 import { PhotoService } from './photo.service';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhotosComponent,
-    PhotoDetailComponent
+    PhotoDetailComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
