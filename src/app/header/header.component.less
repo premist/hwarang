@@ -1,5 +1,10 @@
+@transition-timing: 0.2s;
+
 header {
   padding: 2vh 2vw;
+  background-color: #fff;
+
+  transition: background-color @transition-timing;
 
   h1 {
     float: left;
@@ -10,12 +15,18 @@ header {
     line-height: 32px;
 
     color: #000;
+
+    transition: color @transition-timing;
   }
 
   p {
     float: right;
     line-height: 32px;
   }
+
+  &.black {
+    background-color: #000;
+    h1 { color: #fff; }
+    p { visibility: hidden; }
+  }
 }
-
-
