@@ -5,7 +5,7 @@ import { PhotoService } from '../photo.service';
 @Component({
   selector: 'app-photos',
   templateUrl: './photos.component.html',
-  styleUrls: ['./photos.component.css']
+  styleUrls: ['./photos.component.less']
 })
 export class PhotosComponent implements OnInit {
   photos: Photo[];

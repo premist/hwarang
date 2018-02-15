@@ -1,9 +1,10 @@
-<h2>photos</h2>
-<ul class="photos">
-  <li *ngFor="let photo of photos"
-    id="{{ photo.id }}">
-    <img class="thumb" src="{{ photo.url_original }}">
-    <p>{{ photo.title }}</p>
-    <a routerLink="/photos/{{ photo.id }}">Go</a>
-  </li>
-</ul>
+<div class="photos">
+  <section *ngFor="let photo of photos"
+    id="{{ photo.id }}"
+    class="photo">
+    <a routerLink="/photos/{{ photo.id }}">
+      <img class="thumb" src="{{ photo.url_original }}">
+      <p>{{ photo.title }}</p>
+    </a>
+  </section>
+</div>
