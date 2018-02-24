@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.events.pipe(filter(e => e instanceof ActivationStart)).subscribe((e) => {
+    this.router.events.pipe(filter(e => e instanceof ActivationStart)).subscribe((e: ActivationStart) => {
       if (e.snapshot.component === PhotoDetailComponent) {
         this.black = true;
       } else {
