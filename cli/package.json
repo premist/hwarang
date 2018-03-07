@@ -1,0 +1,15 @@
+{
+  "name": "hwarang-cli",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js"
+  },
+  "dependencies": {
+    "exif-reader": "^1.0.2",
+    "firebase-admin": "^5.9.1",
+    "imagemin": "^5.3.1",
+    "imagemin-mozjpeg": "^7.0.0",
+    "inquirer": "^5.1.0",
+    "sharp": "^0.19.1"
+  }
+}
