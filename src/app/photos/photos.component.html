@@ -3,7 +3,7 @@
     id="{{ photo.id }}"
     class="photo">
     <a routerLink="/photos/{{ photo.id }}">
-      <img class="thumb" src="{{ photo.url_original }}">
+      <img class="thumb" src="{{ photo.thumbnail }}">
       <p>{{ photo.title }}</p>
     </a>
   </section>
