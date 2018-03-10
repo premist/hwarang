@@ -27,7 +27,7 @@ class Picture {
     return this.buffer;
   }
 
-  async compress(quality) {
+  async compressed(quality = 90) {
     let buf = await this.getBuffer();
     let new_buf = await imagemin.buffer(buf, {
       plugins: [mozjpeg({ quality: quality, progressive: true })]
@@ -36,7 +36,13 @@ class Picture {
     return new_buf;
   }
 
-  resize(max_width = 1600, max_height = 1600) {
+  async jpegified() {
+    return new Picture(this.sharp.jpeg({
+      quality: 100
+    }));
+  }
+
+  async resized(max_width = 1600, max_height = 1600) {
     return new Picture(
       this.sharp
         .clone()
