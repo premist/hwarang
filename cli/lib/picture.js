@@ -36,13 +36,13 @@ class Picture {
     return new_buf;
   }
 
-  async jpegified() {
+  jpegified() {
     return new Picture(this.sharp.jpeg({
       quality: 100
     }));
   }
 
-  async resized(max_width = 1600, max_height = 1600) {
+  resized(max_width = 1600, max_height = 1600) {
     return new Picture(
       this.sharp
         .clone()

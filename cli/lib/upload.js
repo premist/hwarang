@@ -1,22 +1,29 @@
-const uuidv4 = require('uuid/v4');
-
 class Upload {
-  constructor(bucket, buffer) {
-    this.bucket = bucket;
+  constructor(buffer, bucket, key) {
     this.buffer = buffer;
+    this.bucket = bucket;
+    this.key = key;
   }
 
-  async perform(key = uuidv4()) {
+  async perform() {
     await new Promise((resolve, reject) => {
-      let file = this.bucket.file(uuidv4());
+      let file = this.bucket.file(this.key);
       let stream = file.createWriteStream({
-        metadata: { contentType: 'image/jpeg'}
+        predefinedAcl: 'publicRead',
+        metadata: {
+          contentType: 'image/jpeg',
+          cacheControl: 'public, max-age=2592000'
+        }
       });
 
       stream.on('finish', resolve);
       stream.on('error', reject);
       stream.end(this.buffer);
     });
+  }
+
+  url() {
+    return `https://storage.googleapis.com/${this.bucket.name}/${this.key}`;
   }
 }
 

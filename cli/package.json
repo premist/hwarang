@@ -7,11 +7,13 @@
   },
   "dependencies": {
     "exif-reader": "^1.0.2",
+    "fast-crc32c": "^1.0.4",
     "firebase-admin": "^5.9.1",
     "imagemin": "^5.3.1",
     "imagemin-mozjpeg": "^7.0.0",
     "inquirer": "^5.1.0",
-    "sharp": "^0.19.1"
+    "sharp": "^0.19.1",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^4.18.2",
