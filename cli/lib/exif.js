@@ -12,6 +12,17 @@ class Exif {
     this.lens = this.exif_data.exif.LensModel;
   }
 
+  simplified() {
+    return {
+      camera: this.camera,
+      f_number: this.f_number,
+      exposure_time: this.exposure_time,
+      iso: this.iso,
+      focal_length_in_35: this.focal_length_in_35,
+      lens: this.lens
+    }
+  }
+
   static async fromSharp(sharp) {
     let metadata = await sharp.metadata();
     return new Exif(metadata.exif);
