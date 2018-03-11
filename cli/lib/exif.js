@@ -1,15 +1,20 @@
 const exif = require('exif-reader');
+const Fraction = require('fraction.js');
 
 class Exif {
   constructor(exif_buf) {
     this.exif_data = exif(exif_buf);
 
     this.camera = `${this.exif_data.image.Make} ${this.exif_data.image.Model}`;
+    this.lens = this.exif_data.exif.LensModel;
+
     this.f_number = this.exif_data.exif.FNumber;
-    this.exposure_time = this.exif_data.exif.ExposureTime;
     this.iso = this.exif_data.exif.ISO;
     this.focal_length_in_35 = this.exif_data.exif.FocalLengthIn35mmFormat;
-    this.lens = this.exif_data.exif.LensModel;
+
+    // Use fraction notication if numerator is not 1
+    let et = new Fraction(this.exif_data.exif.ExposureTime);
+    this.exposure_time = et.n == 1 ? et.toFraction() : et.toString()
   }
 
   simplified() {
