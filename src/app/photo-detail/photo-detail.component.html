@@ -1,4 +1,16 @@
-<section *ngIf="photo" id="{{ photo.id }}">
-  <span class="title">{{ photo.title }}</span>
-  <img src="{{ photo.original }}">
+<section *ngIf="photo" id="{{ photo.id }}" class="photo">
+  <div class="img"
+       [style.backgroundImage]="'url(' + photo.original + ')'"></div>
+  <div class="meta">
+    <div class="title">
+      <span>{{ photo.title }}</span>
+    </div>
+    <div class="exif">
+      <span>{{ photo.exif.camera }}</span>
+      <span>{{ photo.exif.lens }}</span>
+      <span>f/{{ photo.exif.f_number }}</span>
+      <span>{{ photo.exif.exposure_time }}s</span>
+      <span>ISO {{ photo.exif.iso }}</span>
+    </div>
+  </div>
 </section>
