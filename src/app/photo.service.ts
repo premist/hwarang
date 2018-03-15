@@ -17,15 +17,16 @@ export class PhotoService {
     return this.db.collection<Photo>('photos', ref => ref.orderBy('created_at', 'desc'))
       .snapshotChanges()
       .map(actions => {
-        return actions
-          .map(action => action.payload.doc.data())
-          .map(data => { return Photo.fromDocumentData(data) });
+        return actions.map(action => {
+          let doc = action.payload.doc;
+          return Photo.fromDocumentDataWithId(doc.data(), doc.id);
+        });
       });
   }
 
   getPhoto(id: string): Observable<Photo> {
     return this.db.doc<DocumentData>(`photos/${id}`).valueChanges()
-      .map(data => { return Photo.fromDocumentData(data) });
+      .map(data => { return Photo.fromDocumentDataWithId(data,id); });
   }
 
 }
