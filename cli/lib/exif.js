@@ -24,7 +24,6 @@ class Exif {
     return {
       camera: this.camera,
       lens: this.lens,
-      captured_at: this.captured_at,
       f_number: this.f_number,
       exposure_time: this.exposure_time,
       iso: this.iso,

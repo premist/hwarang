@@ -45,6 +45,7 @@ const picture = new Picture(picture_path);
     original: upload_original.url(),
     thumbnail: upload_thumbnail.url(),
     created_at: Math.round((new Date()).getTime()/1000),
+    captured_at: exif.captured_at,
     exif: exif.simplified()
   });
 
