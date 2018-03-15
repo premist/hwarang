@@ -10,6 +10,7 @@ export class Photo {
   created_at: Date;
   captured_at: Date;
   original: string;
+  thumbnail: string;
   exif: Exif;
 
   captured_at_simple() {
@@ -19,13 +20,14 @@ export class Photo {
     return `${year}-${month}-${date}`;
   }
 
-  static fromDocumentData(documentData: DocumentData): Photo {
+  static fromDocumentDataWithId(documentData: DocumentData, id: string): Photo {
     let photo = new Photo();
-    photo.id = documentData.id;
+    photo.id = id;
     photo.title = documentData.title;
     photo.created_at = new Date(documentData.created_at*1000);
     photo.captured_at = new Date(documentData.captured_at*1000);
     photo.original = documentData.original;
+    photo.thumbnail = documentData.thumbnail;
     photo.exif = documentData.exif;
 
     return photo;
