@@ -6,6 +6,7 @@
       <span>{{ photo.title }}</span>
     </div>
     <div class="exif">
+      <span>{{ photo.captured_at_simple() }}</span>
       <span>{{ photo.exif.camera }}</span>
       <span>{{ photo.exif.lens }}</span>
       <span>f/{{ photo.exif.f_number }}</span>
