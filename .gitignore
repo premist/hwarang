@@ -47,7 +47,9 @@ Thumbs.db
 
 # Firebase
 firebase-debug.log
-cli/serviceaccount.json
+.serviceaccount.json
 .firebaserc
+.firebasecfg.json
 
+src/environments/environment.ts
 **/*.swp

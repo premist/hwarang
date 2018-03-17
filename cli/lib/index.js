@@ -8,7 +8,7 @@ const mozjpeg = require('imagemin-mozjpeg');
 const Picture = require('./picture');
 const Upload = require('./upload');
 
-const serviceAccount = require('../serviceaccount.json');
+const serviceAccount = require('../../.serviceaccount.json');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: 'https://hwarangapp.firebaseio.com',
