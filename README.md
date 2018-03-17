@@ -2,6 +2,8 @@
 
 Simple yet visually pleasing web gallery application, powered by Angular and [Firebase](https://firebase.google.com/).
 
+**Disclaimer:** This is a project that is still actively being developed! Use at your own risk.
+
 ## Configuration
 
 Hwarang needs two configuration file:
