@@ -14,6 +14,8 @@ export class Photo {
   exif: Exif;
 
   captured_at_simple() {
+    if(this.captured_at === undefined) { return null; }
+
     let year = this.captured_at.getFullYear();
     let month = this.captured_at.getMonth()+1;
     let date = this.captured_at.getDate();
@@ -25,7 +27,9 @@ export class Photo {
     photo.id = id;
     photo.title = documentData.title;
     photo.created_at = new Date(documentData.created_at*1000);
-    photo.captured_at = new Date(documentData.captured_at*1000);
+    if (documentData.captured_at !== null && documentData.captured_at !== undefined) {
+      photo.captured_at = new Date(documentData.captured_at*1000);
+    }
     photo.original = documentData.original;
     photo.thumbnail = documentData.thumbnail;
     photo.exif = documentData.exif;
