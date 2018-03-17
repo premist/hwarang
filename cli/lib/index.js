@@ -11,8 +11,8 @@ const Upload = require('./upload');
 const serviceAccount = require('../../.serviceaccount.json');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://hwarangapp.firebaseio.com',
-  storageBucket: 'hwarangapp.appspot.com'
+  databaseURL: `https://${project_id}.firebaseio.com`,
+  storageBucket: `${project_id}.appspot.com`
 });
 const bucket = admin.storage().bucket();
 
