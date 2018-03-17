@@ -1,5 +1,7 @@
 # Hwarang 화랑
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/f31b5f40438a7237f32e/maintainability)](https://codeclimate.com/github/premist/hwarang/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f31b5f40438a7237f32e/test_coverage)](https://codeclimate.com/github/premist/hwarang/test_coverage)
+
 Simple yet visually pleasing web gallery application, powered by Angular and [Firebase](https://firebase.google.com/).
 
 **Disclaimer:** This is a project that is still actively being developed! Use at your own risk.
