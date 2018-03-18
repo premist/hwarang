@@ -11,8 +11,8 @@ const Upload = require('./upload');
 const serviceAccount = require('../../.serviceaccount.json');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: `https://${project_id}.firebaseio.com`,
-  storageBucket: `${project_id}.appspot.com`
+  databaseURL: `https://${serviceAccount.project_id}.firebaseio.com`,
+  storageBucket: `${serviceAccount.project_id}.appspot.com`
 });
 const bucket = admin.storage().bucket();
 
@@ -48,8 +48,5 @@ const picture = new Picture(picture_path);
     captured_at: exif.captured_at,
     exif: exif.simplified()
   });
-
-  // const exif = await picture.getExif();
-  // fs.writeFileSync('compressed.jpg', compressed);
 })();
 

@@ -6,12 +6,12 @@
       <span>{{ photo.title }}</span>
     </div>
     <div class="exif">
-      <span>{{ photo.captured_at_simple() }}</span>
-      <span>{{ photo.exif.camera }}</span>
-      <span>{{ photo.exif.lens }}</span>
-      <span>f/{{ photo.exif.f_number }}</span>
-      <span>{{ photo.exif.exposure_time }}s</span>
-      <span>ISO {{ photo.exif.iso }}</span>
+      <span *ngIf="photo.capturedAtFormatted as c">{{ c }}</span>
+      <span *ngIf="photo.exif.camera as c">{{ c }}</span>
+      <span *ngIf="photo.exif.lens as l">{{ l }}</span>
+      <span *ngIf="photo.fNumberFormatted as f" >{{ f }}</span>
+      <span *ngIf="photo.exposureTimeFormatted as e">{{ e }}</span>
+      <span *ngIf="photo.ISOFormatted as i">ISO {{ i }}</span>
     </div>
   </div>
 </section>

@@ -13,13 +13,28 @@ export class Photo {
   thumbnail: string;
   exif: Exif;
 
-  captured_at_simple() {
+  get fNumberFormatted() {
+    if(this.exif.f_number == undefined) { return null; }
+    return `f/${this.exif.f_number}`;
+  }
+
+  get capturedAtFormatted() {
     if(this.captured_at === undefined) { return null; }
 
     let year = this.captured_at.getFullYear();
     let month = this.captured_at.getMonth()+1;
     let date = this.captured_at.getDate();
     return `${year}-${month}-${date}`;
+  }
+
+  get exposureTimeFormatted() {
+    if(this.exif.exposure_time === undefined) { return null; }
+    return `${this.exif.exposure_time}s`;
+  }
+
+  get ISOFormatted() {
+    if(this.exif.iso === undefined) { return null; }
+    return `ISO ${this.exif.iso}`;
   }
 
   static fromDocumentDataWithId(documentData: DocumentData, id: string): Photo {

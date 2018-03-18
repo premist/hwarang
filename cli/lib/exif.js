@@ -1,6 +1,11 @@
 const exif = require('exif-reader');
 const Fraction = require('fraction.js');
 
+const SIMPLIFIED_ATTRS = [
+  "camera", "lens", "f_number", "exposure_time",
+  "iso", "focal_length_in_35"
+];
+
 class Exif {
   constructor(exif_buf) {
     this.exif_data = exif(exif_buf);
@@ -21,14 +26,9 @@ class Exif {
   }
 
   simplified() {
-    return {
-      camera: this.camera,
-      lens: this.lens,
-      f_number: this.f_number,
-      exposure_time: this.exposure_time,
-      iso: this.iso,
-      focal_length_in_35: this.focal_length_in_35
-    }
+    return SIMPLIFIED_ATTRS
+      .filter((a) => { return this[a] !== undefined })
+      .reduce((o, i) => { o[i] = this[i]; return o; }, {});
   }
 
   static async fromSharp(sharp) {
