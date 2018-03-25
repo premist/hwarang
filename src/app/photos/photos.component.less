@@ -1,3 +1,5 @@
+@import "../less/common";
+
 img {
   width: 100%;
   user-drag: none;
@@ -6,13 +8,14 @@ img {
 
 .photos {
   width: 100%;
-  padding: 0 2vw 2vh;
+  .container;
+  padding-top: 0px;
   column-width: 30vw;
   column-gap: 3vw;
 
-  @media screen and (max-width: 600px) {
-    padding: 0 3vw 2vh;
-    column-width: 94vw;
+  @media @mobile {
+   padding-top: 0px;
+   column-width: 94vw;
   }
 }
 
