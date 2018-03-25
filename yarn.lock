@@ -6675,6 +6675,12 @@ ssri@^5.0.0:
   dependencies:
     safe-buffer "^5.1.1"
 
+ssri@~5.2.2:
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.2.4.tgz#9985e14041e65fc397af96542be35724ac11da52"
+  dependencies:
+    safe-buffer "^5.1.1"
+
 static-extend@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/static-extend/-/static-extend-0.1.2.tgz#60809c39cbff55337226fd5e0b520f341f1fb5c6"
