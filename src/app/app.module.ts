@@ -14,6 +14,7 @@ import { PhotoService } from './photo.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LicenseComponent } from './license/license.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     PhotosComponent,
     PhotoDetailComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LicenseComponent
   ],
   imports: [
     BrowserModule,
