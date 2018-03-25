@@ -11,7 +11,7 @@ import { PhotoDetailComponent } from '../photo-detail/photo-detail.component';
 })
 export class HeaderComponent implements OnInit {
   router: Router;
-  black: boolean = false;
+  darkroom: boolean = false;
 
   constructor(router: Router) {
     this.router = router;
@@ -20,9 +20,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.router.events.pipe(filter(e => e instanceof ActivationStart)).subscribe((e: ActivationStart) => {
       if (e.snapshot.component === PhotoDetailComponent) {
-        this.black = true;
+        this.darkroom = true;
       } else {
-        this.black = false;
+        this.darkroom = false;
       }
     });
   }
