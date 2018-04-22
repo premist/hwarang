@@ -6,6 +6,7 @@ import { AngularFirestore, DocumentChangeAction } from 'angularfire2/firestore';
 import { DocumentData } from '@firebase/firestore-types';
 
 import { Photo } from './photo';
+import { ActionSequence } from 'protractor';
 
 @Injectable()
 export class PhotoService {
@@ -18,23 +19,13 @@ export class PhotoService {
       ref.where(`collections.${collection}`, '==', true).orderBy('captured_at', 'desc')
     )
       .snapshotChanges()
-      .map(actions => {
-        return actions.map(action => {
-          const doc = action.payload.doc;
-          return Photo.fromDocumentDataWithId(doc.data(), doc.id);
-        });
-      });
+      .map(actions => this.actionToPhotos(actions));
   }
 
   getPhotos(): Observable<Photo[]> {
     return this.db.collection<Photo>('photos', ref => ref.orderBy('captured_at', 'desc'))
       .snapshotChanges()
-      .map(actions => {
-        return actions.map(action => {
-          const doc = action.payload.doc;
-          return Photo.fromDocumentDataWithId(doc.data(), doc.id);
-        });
-      });
+      .map(actions => this.actionToPhotos(actions));
   }
 
   getPhoto(id: string): Observable<Photo> {
@@ -42,4 +33,10 @@ export class PhotoService {
       .map(data => Photo.fromDocumentDataWithId(data, id));
   }
 
+  private actionToPhotos(actions: DocumentChangeAction[]): Photo[] {
+    return actions.map(action => {
+        const doc = action.payload.doc;
+        return Photo.fromDocumentDataWithId(doc.data(), doc.id);
+    });
+  }
 }
