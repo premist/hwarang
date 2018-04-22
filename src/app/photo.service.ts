@@ -20,7 +20,7 @@ export class PhotoService {
       .snapshotChanges()
       .map(actions => {
         return actions.map(action => {
-          let doc = action.payload.doc;
+          const doc = action.payload.doc;
           return Photo.fromDocumentDataWithId(doc.data(), doc.id);
         });
       });
@@ -31,7 +31,7 @@ export class PhotoService {
       .snapshotChanges()
       .map(actions => {
         return actions.map(action => {
-          let doc = action.payload.doc;
+          const doc = action.payload.doc;
           return Photo.fromDocumentDataWithId(doc.data(), doc.id);
         });
       });
@@ -39,7 +39,7 @@ export class PhotoService {
 
   getPhoto(id: string): Observable<Photo> {
     return this.db.doc<DocumentData>(`photos/${id}`).valueChanges()
-      .map(data => { return Photo.fromDocumentDataWithId(data,id); });
+      .map(data => Photo.fromDocumentDataWithId(data, id));
   }
 
 }
