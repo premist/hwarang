@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LicenseComponent } from './license/license.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LicenseComponent } from './license/license.component';
     PhotoDetailComponent,
     HeaderComponent,
     FooterComponent,
-    LicenseComponent
+    LicenseComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

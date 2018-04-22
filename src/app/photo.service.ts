@@ -13,13 +13,9 @@ export class PhotoService {
 
   constructor(private db: AngularFirestore) { }
 
-  getFeaturedPhotos(): Observable<Photo[]> {
-    return this.getPhotosFromCollection('featured');
-  }
-
   getPhotosFromCollection(collection: string): Observable<Photo[]> {
     return this.db.collection<Photo>('photos', ref =>
-      ref.where(`collections.${collection}`, '==', true).orderBy(`collections.${collection}`)
+      ref.where(`collections.${collection}`, '==', true).orderBy('captured_at', 'desc')
     )
       .snapshotChanges()
       .map(actions => {
