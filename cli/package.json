@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "exif-reader": "^1.0.2",
-    "firebase-admin": "^5.9.1",
+    "firebase-admin": "^5.12.1",
     "fraction.js": "^4.0.4",
     "imagemin": "^5.3.1",
     "imagemin-mozjpeg": "^7.0.0",

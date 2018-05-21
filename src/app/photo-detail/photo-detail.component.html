@@ -1,6 +1,5 @@
 <section *ngIf="photo" id="{{ photo.id }}" class="photo">
   <div class="img"
-       oncontextmenu="return false;"
        [style.backgroundImage]="'url(' + photo.original + ')'"></div>
   <div class="meta">
     <div class="title">
