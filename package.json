@@ -1,0 +1,12 @@
+{
+  "name": "hwarang",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/premist/hwarang.git",
+  "author": "Minku Lee <premist@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "firebase-admin": "^5.13.1",
+    "firebase-functions": "^2.0.2"
+  }
+}
