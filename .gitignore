@@ -1,15 +1,16 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/dist-server
-/tmp
-/out-tsc
+/web/dist
+/web/dist-server
+/web/tmp
+/web/out-tsc
 /functions/lib
 
 # dependencies
 /node_modules
 /functions/node_modules
+/web/node_modules
 /cli/node_modules
 
 # IDEs and editors
@@ -35,7 +36,7 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
-/typings
+/web/typings
 
 # e2e
 /e2e/*.js
