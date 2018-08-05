@@ -52,5 +52,5 @@ firebase-debug.log
 .firebaserc
 .firebasecfg.json
 
-src/environments/environment.ts
+/web/src/enviroments/environment.ts
 **/*.swp
