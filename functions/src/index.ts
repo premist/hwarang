@@ -1,8 +1,15 @@
 import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+admin.initializeApp();
+
+exports.processPublish = functions.database.ref('/publish/{id}').onCreate((snap, context) => {
+    let val = snap.val();
+
+    admin.firestore().collection('photos').add({
+        title: "Hello",
+        original: 
+    });
+    
+    console.log(snap.val());
+});
