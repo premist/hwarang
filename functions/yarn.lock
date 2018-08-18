@@ -99,7 +99,7 @@
     pkg-up "^2.0.0"
     through2 "^2.0.3"
 
-"@google-cloud/storage@^1.6.0":
+"@google-cloud/storage@^1.6.0", "@google-cloud/storage@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-1.7.0.tgz#07bff573d92d5c294db6a04af246688875a8f74b"
   dependencies:
