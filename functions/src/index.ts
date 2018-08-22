@@ -5,7 +5,7 @@ import { File } from '@google-cloud/storage';
 admin.initializeApp();
 
 const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
-const bucket = admin.storage().bucket(firebaseConfig.storageBucket);    
+const bucket = admin.storage().bucket(firebaseConfig.storageBucket);
 
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
@@ -28,13 +28,13 @@ exports.processPublish = functions.database.ref('/publish/{id}').onCreate((snap,
         const encodedThumb = `data:image/jpeg;base64, ${buffer[0].toString('base64')}`;
 
         return firestore.collection('photos').add({
-            title: 'Upload from Uploader',
+            title: val.title,
             exif: val.exif,
             captured_at: new Date(val.captured_at*1000),
             created_at: new Date(),
             thumbnail: encodedThumb,
             original: encodedThumb
-        })    
+        })
     }).then((ref) => {
         return Promise.all([
             moveAndMakePublic(thumb, `photos/${ref.id}/thumb.jpg`),
