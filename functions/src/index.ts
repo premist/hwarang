@@ -25,15 +25,13 @@ exports.processPublish = functions.database.ref('/publish/{id}').onCreate((snap,
 
     return thumb.download().then((buffer) => {
         // Temporary use base64 thumbnail image while the image itself gets copied and made public
-        const encodedThumb = `data:image/jpeg;base64, ${buffer[0].toString('base64')}`;
+        // const encodedThumb = `data:image/jpeg;base64, ${buffer[0].toString('base64')}`;
 
         return firestore.collection('photos').add({
             title: val.title,
             exif: val.exif,
             captured_at: new Date(val.captured_at*1000),
-            created_at: new Date(),
-            thumbnail: encodedThumb,
-            original: encodedThumb
+            created_at: new Date()
         })
     }).then((ref) => {
         return Promise.all([
