@@ -1,4 +1,5 @@
-import { DocumentData } from '@firebase/firestore-types';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
 interface Exif {
   [key: string]: string;
@@ -19,6 +20,7 @@ export class Photo {
   }
 
   get capturedAtFormatted() {
+    console.log(this.captured_at);
     if (this.captured_at === undefined) { return null; }
 
     const year = this.captured_at.getFullYear();
@@ -37,7 +39,7 @@ export class Photo {
     return `ISO ${this.exif.iso}`;
   }
 
-  static fromDocumentDataWithId(documentData: DocumentData, id: string): Photo {
+  static fromDocumentDataWithId(documentData: firebase.firestore.DocumentData, id: string): Photo {
     const photo = new Photo();
     photo.id = id;
     photo.title = documentData.title;
@@ -52,11 +54,11 @@ export class Photo {
     return photo;
   }
 
-  static parseDate(date: number | Date): Date {
+  static parseDate(date: number | firebase.firestore.Timestamp): Date {
     if (typeof date === 'number') {
       return new Date(date * 1000);
-    } else {
-      return date;
+    } else if (date instanceof firebase.firestore.Timestamp) {
+      return new Date(date.seconds * 1000);
     }
   }
 }

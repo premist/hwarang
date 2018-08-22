@@ -217,10 +217,6 @@
     faye-websocket "0.11.1"
     tslib "1.9.0"
 
-"@firebase/firestore-types@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-0.2.2.tgz#e60b6c7a458538b1bf8ed89d9df981fa17a74871"
-
 "@firebase/firestore-types@0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-0.6.0.tgz#560befea439a4a9d830866fa5f5859e4bb30d770"
@@ -235,16 +231,6 @@
     grpc "1.13.1"
     tslib "1.9.0"
 
-"@firebase/firestore@^0.3.1":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-0.3.7.tgz#7160ebcd2574ca56521df847086bf291dd216ff0"
-  dependencies:
-    "@firebase/firestore-types" "0.2.2"
-    "@firebase/logger" "0.1.0"
-    "@firebase/webchannel-wrapper" "0.2.7"
-    grpc "^1.9.1"
-    tslib "^1.9.0"
-
 "@firebase/functions-types@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@firebase/functions-types/-/functions-types-0.2.0.tgz#936d3f77957431a8ef1817975fee26464575802b"
@@ -257,10 +243,6 @@
     "@firebase/messaging-types" "0.2.3"
     isomorphic-fetch "2.2.1"
     tslib "1.9.0"
-
-"@firebase/logger@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@firebase/logger/-/logger-0.1.0.tgz#0a7b3af8a43e4b48cc9b16e518c07d8a2ea290e8"
 
 "@firebase/logger@0.1.1":
   version "0.1.1"
@@ -302,10 +284,6 @@
   resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.2.1.tgz#b59a2fbf14fce21401cbebf776a3e0260b591380"
   dependencies:
     tslib "1.9.0"
-
-"@firebase/webchannel-wrapper@0.2.7":
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.7.tgz#0495fd7294348d9887abb182aa27432cb8936488"
 
 "@firebase/webchannel-wrapper@0.2.8":
   version "0.2.8"
@@ -2888,7 +2866,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-grpc@1.13.1, grpc@^1.12.0, grpc@^1.9.1:
+grpc@1.13.1, grpc@^1.12.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/grpc/-/grpc-1.14.1.tgz#42d5900fd13a0daca1a58155cd4ab4d0c2f9c716"
   dependencies:
