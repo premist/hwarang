@@ -20,7 +20,6 @@ export class Photo {
   }
 
   get capturedAtFormatted() {
-    console.log(this.captured_at);
     if (this.captured_at === undefined) { return null; }
 
     const year = this.captured_at.getFullYear();

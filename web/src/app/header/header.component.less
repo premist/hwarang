@@ -1,37 +1,47 @@
 @import "../less/common";
-@transition-timing: 0.2s;
+@transition-timing: 0.4s;
 
 header {
   .container;
+  z-index: 1000;
 
-  background-color: #fff;
+  //background-color: #fff;
 
-  transition: background-color @transition-timing;
+  // transition: background-color @transition-timing;
 
   h1 {
     float: left;
-    margin: 0;
 
-    cursor: default;
+    &, & a {
+      display: block;
+      margin: 0;
+      padding: 0;
+      line-height: 32px;
+    }
 
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 32px;
+    a {
+      .font-sentinel;
+      font-size: 26px;
+      font-weight: 700;
 
-    color: #000;
+      color: #000;
 
-    transition: color @transition-timing;
+      transition: color @transition-timing;
+    }
   }
 
   p {
-    float: right;
+    float: left;
+    margin-left: 15px;
+
+    .font-ringside;
     line-height: 32px;
   }
 
   &.darkroom {
     position: absolute;
-    background-color: transparent;
-    h1, a { color: #fff; }
+    // background-color: transparent;
+    h1 a { color: #fff; }
     p { visibility: hidden; }
   }
 }

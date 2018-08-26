@@ -3,6 +3,8 @@
 @meta-height-desktop: 32px;
 @meta-height-mobile: 64px;
 
+@transition-timing: 1s;
+
 .photo {
   height: 100%;
   background-color: #000;
@@ -21,25 +23,35 @@
 }
 
 .meta {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   .container;
+  position: absolute;
+  width: 100%;
+  top: 0;
+
+  background: transparent;
+  opacity: 0;
 
   line-height: 32px;
   text-align: center;
+
+  transition: opacity @transition-timing;
+
+  &.visible {
+    opacity: 1;
+  }
 
   div {
     margin: 0;
   }
 
   span {
-    color: #bcbcbc;
+    color: rgba(255, 255, 255, 0.8);
     white-space: nowrap;
   }
 
   .title {
     float: left;
+    padding-left: 50px;
     @media @mobile { float: none; }
   }
 
@@ -50,9 +62,9 @@
     span {
       margin: 0 4px;
 
-      font-size: 0.8em;
+      font-size: 0.9em;
+      font-weight: 300;
       vertical-align: middle;
-      font-family: "Ringside Narrow SSm A", "Ringside Narrow SSm B";
     }
   }
 }
