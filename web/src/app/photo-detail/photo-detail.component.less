@@ -52,12 +52,20 @@
   .title {
     float: left;
     padding-left: 50px;
-    @media @mobile { float: none; }
   }
 
   .exif {
     float: right;
-    @media @mobile { float: none; }
+    @media @mobile {
+      float: none;
+      position: fixed;
+
+      // Take existing meta container's padding into account
+      width: calc(100% - 40px);
+      bottom: 10px;
+
+      overflow: scroll;
+    }
 
     span {
       margin: 0 4px;
