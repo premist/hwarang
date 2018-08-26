@@ -27,17 +27,14 @@ export class PhotoDetailComponent implements OnInit {
   }
 
   detectMovementForMeta(): void {
-    const move = fromEvent(document, 'mousemove').pipe(
+    const observable = fromEvent(document, 'mousemove').pipe(
       merge(fromEvent(document, 'scroll')),
-      throttleTime(300),
-      mapTo(false)
+      merge(fromEvent(document, 'touchdown')),
+      merge(fromEvent(document, 'touchmove'))
     );
-    const nomove = fromEvent(document, 'mousemove').pipe(
-      merge(fromEvent(document, 'scroll')),
-      startWith(0),
-      debounceTime(300),
-      mapTo(true)
-    );
+
+    const move = observable.pipe(throttleTime(300), mapTo(false));
+    const nomove = observable.pipe(startWith(0), debounceTime(300), mapTo(true));
 
     move.pipe(
       merge(nomove),
