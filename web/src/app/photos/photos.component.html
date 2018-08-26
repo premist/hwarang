@@ -3,7 +3,7 @@
     id="{{ photo.id }}"
     class="photo">
     <a routerLink="/photos/{{ photo.id }}">
-      <img class="thumb" draggable="false" oncontextmenu="return false;" src="{{ photo.thumbnail }}">
+      <img class="thumb" draggable="false" oncontextmenu="return false;" src="{{ photo.thumbnailProxied }}">
     </a>
   </section>
 </div>

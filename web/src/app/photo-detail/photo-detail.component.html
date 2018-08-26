@@ -1,6 +1,6 @@
 <section *ngIf="photo" id="{{ photo.id }}" class="photo">
   <div class="img"
-       [style.backgroundImage]="'url(' + photo.original + ')'"></div>
+       [style.backgroundImage]="'url(' + photo.originalProxied + ')'"></div>
   <div [class.visible]="showMeta" class="meta">
     <div class="title">
       <span>{{ photo.title }}</span>

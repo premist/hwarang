@@ -1,5 +1,6 @@
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
+import { environment } from '../environments/environment';
 
 interface Exif {
   [key: string]: string;
@@ -13,6 +14,16 @@ export class Photo {
   original: string;
   thumbnail: string;
   exif: Exif;
+
+  get originalProxied() {
+    if (environment.proxy as string === undefined) { return this.original; }
+    return this.original.replace(`https://storage.googleapis.com/${environment.firebase.storageBucket}`, environment.proxy);
+  }
+
+  get thumbnailProxied() {
+    if (environment.proxy as string === undefined) { return this.thumbnail; }
+    return this.thumbnail.replace(`https://storage.googleapis.com/${environment.firebase.storageBucket}`, environment.proxy);
+  }
 
   get fNumberFormatted() {
     if (this.exif.f_number === undefined) { return null; }
