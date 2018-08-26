@@ -32,11 +32,9 @@ export class PhotoDetailComponent implements OnInit {
 
     move.pipe(
       merge(nomove),
-      tap(x => console.log('FROM TAP', x)),
       switchMap(e => {
         // Return false to hide meta, true to show meta when mouse movement is detected
-        const j = e ? of(false).pipe(delay(2000)) : of(true);
-        return j;
+        return e ? of(false).pipe(delay(2000)) : of(true);
       })
     ).subscribe((showMeta) => { this.showMeta = showMeta; });
   }
